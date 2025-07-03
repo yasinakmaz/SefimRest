@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sefim.Views.LoginPage"
+             xmlns:vm="clr-namespace:Sefim.ViewModels"
+             x:DataType="vm:LoginViewModel"
+             xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             Title="LoginPage">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <VerticalStackLayout Margin="10" Spacing="10" WidthRequest="400" HorizontalOptions="Center" VerticalOptions="Center">
+            <Entry Placeholder="Şifre" Style="{StaticResource TxtEnt}" Text="{Binding Password}"/>
+            <Grid ColumnDefinitions="*,*,*" HeightRequest="60" ColumnSpacing="3">
+                <Button Grid.Column="0" Text="1" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="1"/>
+                <Button Grid.Column="1" Text="2" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="2"/>
+                <Button Grid.Column="2" Text="3" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="3"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,*,*" HeightRequest="60" ColumnSpacing="3">
+                <Button Grid.Column="0" Text="4" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="4"/>
+                <Button Grid.Column="1" Text="5" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="5"/>
+                <Button Grid.Column="2" Text="6" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="6"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,*,*" HeightRequest="60" ColumnSpacing="3">
+                <Button Grid.Column="0" Text="7" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="7"/>
+                <Button Grid.Column="1" Text="8" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="8"/>
+                <Button Grid.Column="2" Text="9" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="9"/>
+            </Grid>
+
+            <Grid ColumnDefinitions="*,*,*" HeightRequest="60" ColumnSpacing="3">
+                <Button Grid.Column="0" Text="←" Style="{StaticResource BtnLogin}" Command="{Binding BtnClearCommand}"/>
+                <Button Grid.Column="1" Text="0" Style="{StaticResource BtnLogin}" Command="{Binding LoginBtnCommand}" CommandParameter="0"/>
+                <Button Grid.Column="2" Text="ENTER" Style="{StaticResource BtnLogin}" Command="{Binding LoginCommand}"/>
+            </Grid>
+        </VerticalStackLayout>
+        <ImageButton HorizontalOptions="End" VerticalOptions="End" Source="dotnet_bot.png" HeightRequest="50" WidthRequest="50" Margin="10"/>
+    </Grid>
+</ContentPage>

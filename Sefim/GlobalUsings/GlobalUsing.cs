@@ -1,0 +1,17 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+global using Microsoft.EntityFrameworkCore;
+global using System.ComponentModel;
+global using System.ComponentModel.DataAnnotations.Schema;
+global using System.Windows.Input;
+global using Microsoft.Data.SqlClient;
+global using Sefim.Data;
+global using Microsoft.Extensions.Logging;
+global using Syncfusion.Maui.Core.Hosting;
+global using Syncfusion.Maui.Toolkit.Hosting;
+global using Sefim.Views;
