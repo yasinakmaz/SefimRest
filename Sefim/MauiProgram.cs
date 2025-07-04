@@ -10,7 +10,11 @@
                 .ConfigureSyncfusionCore()
                 .ConfigureSyncfusionToolkit()
                 .UseNaluControls()
-                .UseNaluNavigation<App>()
+                .UseNaluNavigation<App>(nav => nav
+                .AddPages()
+                .WithNavigationIntentBehavior(NavigationIntentBehavior.Fallthrough)
+                .WithLeakDetectorState(NavigationLeakDetectorState.EnabledWithDebugger)
+                )
                 .UseNaluLayouts()
                 .ConfigureFonts(fonts =>
                 {
@@ -21,6 +25,14 @@
                     fonts.AddFont("EthosNova-Heavy.ttf", "EthosNovaHeavy");
                     fonts.AddFont("EthosNova-Regular.ttf", "EthosNovaRegular");
                 });
+
+#if DEBUG
+            builder.Logging.AddDebug();
+            builder.Services.AddLogging(configure => configure.AddDebug());
+#endif
+
+            builder.Services.AddSingleton<LoginViewModel>();
+            builder.Services.AddSingleton<MenuViewModel>();
 
             return builder.Build();
         }

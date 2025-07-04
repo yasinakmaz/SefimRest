@@ -2,9 +2,9 @@ namespace Sefim.Views;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage(LoginViewModel loginViewModel)
+	public LoginPage(LoginViewModel viewModel)
 	{
 		InitializeComponent();
-		BindingContext = loginViewModel;
+		BindingContext = viewModel;
 	}
 }

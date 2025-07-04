@@ -2,8 +2,9 @@ namespace Sefim.Views;
 
 public partial class MenuPage : ContentPage
 {
-	public MenuPage()
-	{
-		InitializeComponent();
-	}
+    public MenuPage(MenuViewModel menuViewModel)
+    {
+        InitializeComponent();
+        BindingContext = menuViewModel;
+    }
 }

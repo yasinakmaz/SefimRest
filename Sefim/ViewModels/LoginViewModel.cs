@@ -1,16 +1,14 @@
 ﻿namespace Sefim.ViewModels
 {
-    public partial class LoginViewModel : ObservableObject
+    public partial class LoginViewModel(INavigationService _navigationService) : ObservableObject
     {
         [ObservableProperty]
         private string? password;
 
         private AppDbContext _context;
-        private readonly INavigationService _navigationService;
-        public LoginViewModel(INavigationService navigationService) 
+        public LoginViewModel() : this(App.Current.Handler.MauiContext.Services.GetService<INavigationService>())
         {
             _context = new AppDbContext();
-            _navigationService = navigationService;
         }
 
         [RelayCommand]
@@ -39,11 +37,19 @@
         {
             try
             {
-                bool answer = await _context.User.Where(dl => dl.Deleted == false || dl.Deleted == null && dl.Password == Password).AnyAsync();
+                bool answer = await _context.User.Where(dl => (dl.Deleted == false || dl.Deleted == null) && dl.Password == Password).AnyAsync();
 
                 if (answer)
                 {
-                    await _navigationService.GoToAsync(Navigation.Relative().Push<MenuPage>());
+                    try
+                    {
+                        Navigation.Relative().Push<MenuViewModel>();
+                    }
+                    catch (Exception navEx)
+                    {
+                        await Shell.Current.DisplayAlert("Navigasyon Hatası",
+                            $"Sayfa açılırken hata oluştu: {navEx.Message}", "Tamam");
+                    }
                 }
                 else
                 {
