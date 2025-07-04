@@ -2,7 +2,7 @@
 {
     public partial class AppShell : NaluShell
     {
-        public AppShell(INavigationService navigationService) : base(navigationService, "main")
+        public AppShell(INavigationService navigationService) : base(navigationService, typeof(LoginPage))
         {
             InitializeComponent();
         }

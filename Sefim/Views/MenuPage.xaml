@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Sefim.Views.MenuPage"
+             xmlns:vm="clr-namespace:Sefim.ViewModels"
+             x:DataType="vm:MenuPageModel"
              Title="MenuPage">
 
     <Grid>
