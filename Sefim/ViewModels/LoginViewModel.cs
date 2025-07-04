@@ -6,9 +6,11 @@
         private string? password;
 
         private AppDbContext _context;
-        public LoginViewModel() 
+        private readonly INavigationService _navigationService;
+        public LoginViewModel(INavigationService navigationService) 
         {
             _context = new AppDbContext();
+            _navigationService = navigationService;
         }
 
         [RelayCommand]
@@ -41,7 +43,7 @@
 
                 if (answer)
                 {
-                    Nalu.Navigation.Relative().Push<MenuPage>();
+                    await _navigationService.GoToAsync(Navigation.Relative().Push<MenuPage>());
                 }
                 else
                 {

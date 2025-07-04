@@ -22,10 +22,6 @@
                     fonts.AddFont("EthosNova-Regular.ttf", "EthosNovaRegular");
                 });
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
-
             return builder.Build();
         }
     }

@@ -7,10 +7,6 @@
              xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
              Title="LoginPage">
 
-    <ContentPage.BindingContext>
-        <vm:LoginViewModel/>
-    </ContentPage.BindingContext>
-
     <Grid>
         <VerticalStackLayout Margin="10" Spacing="10" WidthRequest="400" HorizontalOptions="Center" VerticalOptions="Center">
             <Entry Placeholder="Şifre" Style="{StaticResource TxtEnt}" Text="{Binding Password}"/>

@@ -15,3 +15,5 @@ global using Microsoft.Extensions.Logging;
 global using Syncfusion.Maui.Core.Hosting;
 global using Syncfusion.Maui.Toolkit.Hosting;
 global using Sefim.Views;
+global using Nalu;
+global using Sefim.ViewModels;
